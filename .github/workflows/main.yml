@@ -1,0 +1,14 @@
+name: vitest-testing
+on: push
+jobs:
+  vitest-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      - name: Install vitest
+        run: npm install
+      # Lancer les tests
+      - name: Run tests
+        run: npm run test
